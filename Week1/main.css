@@ -1,0 +1,12 @@
+h1 {
+    font-family:Arial;
+    font-size:16px;
+    text-align:center;
+    margin: 25px 50px 75px 100px; 
+}
+
+@media (min-width: 570px) {
+    /*IF SCREEN IS BIGGER THEN 570px then show me these settings*/
+    
+}
+    

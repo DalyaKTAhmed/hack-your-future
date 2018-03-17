@@ -1,1 +1,165 @@
 
+
+h1{
+    border: 1px solid black;
+    margin-top: 0px;
+    text-align: center;
+    color: black
+    text-shadow: 2px 2px;
+    box-sizing: content-box;
+    background-color: silver;
+}
+h2{
+    clear:left; /*this line what make the head of the GRID FIX BOX ceberate from the box of GIRD FLOAT*/
+    margin-top: 0px;
+    text-align: center;
+    color:yellowgreen
+    font-size: 2em;
+    font-family: sans-serif;   
+    box-sizing: content-box;
+    background-color: cadetblue;
+}    
+h3{
+margin-top: 0px;
+color: bisque);
+text-align:center;
+}
+p{
+    margin-top: 10px;
+    margin-botton: 15px;
+    marigin-left:10px;
+    line-height:1.4;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
+    text-align: center;
+}
+img {
+    width: 100%;
+    height: auto;
+  }
+body {
+  background-color: lightskyblue; 
+}
+ul {
+    margin: 4em auto; /*this line make the contect of the page in the center of the page*/
+    width: 100%;
+    max-width: 800px;
+  }
+ /*this is the "li" which represent each colomn*/  
+.grid-item {
+        float:left;
+        width: 30%;
+        height:450px;
+        margin:5px;
+        border:solid 2px;
+        list-style: none; /*to get rid of the black poits*/
+        background-color:#fdfdfd;
+        border-color:black; 
+         
+       }
+
+  <--select <li> elements that are the first child of their parent-->
+  #grid-floats .grid-item:nth-child(1) {
+    width: calc(100% - 1em);
+    margin: 0.5em;
+  }
+  
+  
+
+  /*
+  -- Clearfix --
+  A little hack to make the container as big as it should be when you float all children.
+  */
+
+  #grid-flex:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  #grid-flex .grid-item {
+    float: left;
+  }
+  #grid-flex.grid-item:nth-child(2n) {
+    clear: left;
+  }
+  #grid-flex {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  #grid-floats {
+    box-sizing:border-box;
+  }
+#grid-floats .grid-item:nth-of-type(2) {
+    width:93%;
+}
+#grid-flex{ 
+    display:flex;
+   flex-direction:row;
+   flex-wrap:wrap;
+}
+#grid-flex .grid-item{
+    border:solid 1px; 
+    border-color:black;  
+   height:400px;
+}
+
+/*https://css-tricks.com/the-difference-between-nth-child-and-nth-of-type/*/
+  @media screen and (min-width:600px){
+   
+    #grid-floats {
+        width:80px;
+    }
+    #grid-floats .grid-item{
+        width:20px;
+    }
+   /* :nth-child selector means select an element if:
+#grid-floats .grid-item*/
+/* :nth-of-type selector means:
+Select the first coloun child of a parent*/
+    #grid-floats .grid-item:nth-of-type(2){
+        width:50px;
+    }
+    #grid-flex{
+        width:95px;
+    }
+    #grid-flex .grid-item {
+        width:30px;
+    }
+    #grid-flex .grid-item:nth-child(1) {
+        width:45px;
+    }#grid-flex .grid-item:nth-child(2) {
+      width:45px;
+  }     
+  }
+  @media screen and (min-width:950px){
+   
+    #grid-floats {
+        width:99%;
+    }
+   #grid-floats .grid-item{
+        width:22.5%;
+    }
+    #grid-floats .grid-item:nth-of-type(1) {
+        width:46%;
+    }
+    #grid-floats .grid-item:nth-of-type(2) {
+        width:22.5%;
+    }
+    #grid-flex{
+        width:95%;
+    }
+    #grid-flex .grid-item{
+        width:22.5%;
+    }
+    #grid-flex .grid-item:nth-child(1) {
+        width:46%;
+    }
+    #grid-flex .grid-item:nth-of-type(2) {
+        width:22.5%;
+    }
+   
+}
+      
+ 
+   
